@@ -6,7 +6,16 @@ function addCallback(a, b, cb) {
     setTimeout(() => {
         if (isNaN(a) || isNaN(b)) cb(new Error('Type error'));
         cb(null, a + b);
-    }, 500)
+    }, 500);
 }
 
-module.exports = { add, addCallback };
+function addPromise(a, b) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (isNaN(a) || isNaN(b)) reject(new Error('Type error'));
+            resolve(a + b);
+        }, 500)
+    });
+}
+
+module.exports = { add, addCallback, addPromise };
