@@ -9,6 +9,10 @@
     "mocha": "^4.0.1"
   },
   "scripts": {
-    "test": "nodemon --exec mocha"
+    "test": "nodemon --exec mocha --recursive"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "mongoose": "^4.13.7"
   }
 }
