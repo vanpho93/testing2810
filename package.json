@@ -1,0 +1,14 @@
+{
+  "name": "testing2810",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vanpho93/testing2810.git",
+  "author": "Van Pho Nguyen <vanpho02@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "test": "nodemon --exec mocha"
+  }
+}
