@@ -17,6 +17,10 @@ class Story extends StoryModel {
         const user = await User.findByIdAndUpdate(_id, updateObj);
         return story;
     }
+
+    static async updateStory(_id, title, content) {
+        return Story.findByIdAndUpdate(_id, { title, content });
+    }
 }
 
 module.exports = Story;
