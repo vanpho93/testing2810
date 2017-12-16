@@ -4,7 +4,7 @@ const { app } = require('../../src/app');
 const User = require('../../src/models/User');
 const { compare } = require('bcrypt');
 
-describe.only('Test POST sign up ', () => {
+describe('Test POST sign up ', () => {
     it('Can sign up by post /signup', async () => {
         const body = {
             email: 'vanpho01@gmail.com',
