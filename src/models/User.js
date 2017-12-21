@@ -23,6 +23,7 @@ class User extends UserModel {
         if (!user) throw new Error('User khong ton tai');
         const same = await compare(password, user.password);
         if (!same) throw new Error('Mat khau khong hop le');
+        return user;
     }
 }
 
