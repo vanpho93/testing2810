@@ -1,7 +1,7 @@
 const assert = require('assert');
 const { add, addCallback, addPromise } = require('../../src/add');
 
-describe('Test add promise', () => {
+xdescribe('Test add promise', () => {
     it('Can add 2 number by addPromise', done => {
         addPromise(4, 5)
         .then(result => {
