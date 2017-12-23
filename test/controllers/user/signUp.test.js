@@ -5,7 +5,7 @@ const request = require('supertest');
 const { app } = require('../../../src/app');
 const User = require('../../../src/models/User');
 
-describe.only('Test POST sign up ', () => {
+describe('Test POST sign up ', () => {
     it('Can sign up by post /signup', async () => {
         const body = {
             email: 'vanpho01@gmail.com',
@@ -14,7 +14,7 @@ describe.only('Test POST sign up ', () => {
             phone: '01823812'
         };
         const response = await request(app)
-        .post('/signup')
+        .post('/user/signup')
         .type('form')
         .send(body);
         assert.equal(response.text, 'Dang ky thanh cong');
@@ -34,7 +34,7 @@ describe.only('Test POST sign up ', () => {
             phone: '01823812'
         };
         const response = await request(app)
-        .post('/signup')
+        .post('/user/signup')
         .type('form')
         .send(body);
         assert.equal(response.status, 400);
@@ -49,7 +49,7 @@ describe.only('Test POST sign up ', () => {
             phone: '01823812'
         };
         const response = await request(app)
-        .post('/signup')
+        .post('/user/signup')
         .type('form')
         .send(body);
         assert.equal(response.status, 400);
