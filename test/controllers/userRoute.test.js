@@ -23,4 +23,20 @@ describe('Test POST sign up ', () => {
         const same = await compare('123', user.password);
         assert.equal(same, true);
     });
+
+    it ('Cannot sign up with duplicated email', async () => {
+        await User.signUp('a123@gmail.com', '123', 'Teo', '09876543');
+        const body = {
+            email: 'a123@gmail.com',
+            password: '123',
+            name: 'Ti',
+            phone: '01823812'
+        };
+        const response = await request(app)
+        .post('/signup')
+        .type('form')
+        .send(body);
+        assert.equal(response.status, 400);
+        assert.equal(response.text, 'Email da ton tai');
+    });
 });
