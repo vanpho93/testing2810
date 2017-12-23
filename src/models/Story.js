@@ -10,11 +10,11 @@ const storySchema = new mongoose.Schema({
 const StoryModel = mongoose.model('Story', storySchema);
 
 class Story extends StoryModel {
-    static async addStory(_id, title, content) {
-        const story = new Story({ title, content, author: _id });
+    static async addStory(idUser, title, content) {
+        const story = new Story({ title, content, author: idUser });
         await story.save();
         const updateObj = { $push: { stories: story._id } };
-        const user = await User.findByIdAndUpdate(_id, updateObj);
+        const user = await User.findByIdAndUpdate(idUser, updateObj);
         return story;
     }
 

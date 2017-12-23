@@ -1,4 +1,4 @@
-const { sign, verify } = require('../jwt');
+const { sign, verify } = require('../../jwt');
 
 module.exports = (req, res, next) => {
     const { token } = req.cookies;

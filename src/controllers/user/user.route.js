@@ -1,6 +1,5 @@
 const express = require('express');
 const parser = require('body-parser').urlencoded({ extended: false });
-const User = require('../models/User');
 const redirectIfLoggedIn = require('./redirectIfLoggedIn.middleware');
 const requireLogIn = require('./requireLogIn.middleware');
 

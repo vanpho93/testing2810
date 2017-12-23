@@ -1,4 +1,4 @@
-const { verify } = require('../jwt');
+const { verify } = require('../../jwt');
 
 module.exports = (req, res, next) => {
     const { token } = req.cookies;
@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
     verify(token)
     .then(obj => {
         if (!obj.email) return next();
-        res.redirect('/profile');
+        res.redirect('/user/profile');
     })
-    .catch(err => res.next());
+    .catch(err => next());
 };
